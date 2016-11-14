@@ -33,5 +33,5 @@ testem.log
 .DS_Store
 Thumbs.db
 
-#x-shared
-web/src/x-shared
+# x-shared
+src/x-shared
