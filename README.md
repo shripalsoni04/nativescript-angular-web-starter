@@ -54,7 +54,7 @@ For convenince below are the commands which you can execute from root directory.
 
 ## Known Issues and Solution
 1. Regarding AOT
-  - When you prepare aot build or serve project in aot mode, make sure you comment the exclude configuration in web/src/tsconfig.json file. Because currently AOT build also trying to compile test files and failing .This is know issue and can be tracked at https://github.com/angular/angular-cli/issues/2736. Once it is resolved, we can keep this uncommented for better unit testing support.
+  - When you prepare AOT build or serve project in AOT mode, make sure you comment the exclude configuration in web/src/tsconfig.json file. Because currently AOT build also trying to compile test files and failing .This is know issue and can be tracked at https://github.com/angular/angular-cli/issues/2736. Once it is resolved, we can keep this uncommented for better unit testing support.
   ```
   // "exclude": [
   //   "**/*.spec.ts",
@@ -64,7 +64,22 @@ For convenince below are the commands which you can execute from root directory.
 
   - **Note**: When you execute `npm test` or `npm run test-cc` commands, make sure you uncomment above lines, otherwise test cases will give errors.
 
-2. Angular dependencies at two levels for AOT support
+2. For Android/iOS, Changes in `x-shared` folder are not being watched and deplyed to device/emulator when using livesync command in watch mode.
+  - Currently there is a bug in `nativescript-cli` that the changes in symlinked folder are not being watched. This can be tracked at https://github.com/NativeScript/nativescript-cli/issues/2221. So this may be fixed in next releases but if you want this functionality right now, there is a workaround solution as follows:
+
+  - **Workaround Solution** - Go to the folder where `nativescript` is globally installed. For macOS it is at `/usr/local/lib/node_modules/nativescript/`. From that folder open `lib/services/livesync/livesync-service.js` file and add `follow:true` option in `gaze` function call in  `partialSync` method as follows:
+
+  ```
+  LiveSyncService.prototype.partialSync = function (syncWorkingDirectory, onChangedActions) {
+        ...
+        var gazeWatcher = gaze("**/*", { cwd: syncWorkingDirectory, follow: true }, function (err, watcher) {
+            ...
+        });
+        ...
+    };
+  ```
+
+3. Angular dependencies at two levels for AOT support
   - Currently we have added angular dependencies in root level package.json and web/package.json. Because, AOT does not work properly when we use path mapping and this issue is reported and can be traked at https://github.com/angular/angular-cli/issues/1732 and PR:https://github.com/angular/angular-cli/pull/2470. Once this issue is resolved we can add path mapping as shown below and remove the angular dependencies from web/package.json, so in case of any version update we just need to change the version at root directory level.
 
     **web/src/tsconfig.json**
@@ -73,7 +88,56 @@ For convenince below are the commands which you can execute from root directory.
         "@angular/*": ["../../node_modules/@angular/*"]
       }
     ```
-   
+
+
+## FAQ
+### How to change package/bundle id for Android/iOS apps?
+To change the package/bundle id you need to do changes in below files.
+1. `nativescript/package.json`
+- Change `id` property of `nativescript` object as follows:
+
+```
+"nativescript": {
+    "id": "com.domain.yourapp"
+}
+```
+
+2. Open `nativescript/app/App_Resources/Android/app.gradle` file and change `applicationId` as shown below:
+
+```
+android {
+  defaultConfig {
+    ...
+    applicationId = "com.domain.yourapp"
+  }
+  ...
+}
+```
+
+### How to change Android and iOS Application Display Name?
+**For Android**, open `nativescript/app/App_Resources/Android/values/strings.xml` file and write your app name `Nativescript Web Starter` is written:
+
+```
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Nativescript Web Starter</string>
+    <string name="title_activity_kimera">Nativescript Web Starter</string>
+</resources>
+```
+
+**For iOS**, open `nativescript/app/App_Resources/iOS/info.plist` file and change value of `CFBundleDisplayName` and `CFBundleName` to your app name:
+
+```
+<dict>
+  ...
+  <key>CFBundleDisplayName</key>
+	<string>Nativescript Web Starter</string>
+  <key>CFBundleName</key>
+	<string>NativescriptWebStarter</string>
+  ...
+</dict>
+```
+
 ## Attributes (All are npm packages)
 1. nativescript-swiss-army-knife
 2. Awesome framework and toolchain of Nativescript and Angular.
