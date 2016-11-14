@@ -1,0 +1,8 @@
+hooks
+lib
+node_modules
+platforms
+app/**/*.js.map
+app/**/*.js
+app/x-shared
+app/**/*.css

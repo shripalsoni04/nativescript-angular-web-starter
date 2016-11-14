@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "xhr2": "github:gdi2290/typed-xhr2#69f2b8d40d0cd407c1b2a2f2f41fecc6852cabbb"
+  },
+  "globalDependencies": {
+    "node": "registry:dt/node#6.0.0+20160925070332"
+  }
+}

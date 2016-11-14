@@ -1,0 +1,35 @@
+/* You can add global styles to this file, and also import other style files */
+@import "scss/variables";
+
+html, body {
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+.btn-primary {
+  font-size: 16px;
+  background-color: $c-accent;
+  color: $c-accent-contrast;
+  border: 0;
+  padding: 15px;
+  border-radius: 3px;
+  outline: 0;
+  cursor: pointer;
+}
+
+.btn-primary:active {
+  background-color: $c-dark-accent;
+}
+
+.text-primary {
+  color: $c-primary-text;
+}
+
+.text-secondary {
+  color: $c-secondary-text;
+}

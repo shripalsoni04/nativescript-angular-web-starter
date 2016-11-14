@@ -1,0 +1,16 @@
+@import "../scss/_variables";
+
+.top-bar {
+  background-color: $c-primary;
+  color: $c-primary-contrast;
+  height: 70px;
+
+  .title {
+    text-align: center;
+    padding: 17px;
+  }
+}
+
+.content-container {
+  text-align: center;
+}

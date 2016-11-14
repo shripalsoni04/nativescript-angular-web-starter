@@ -1,0 +1,52 @@
+{
+  "name": "nativescript-web-starter",
+  "version": "1.0.0",
+  "description": "Starter for web and native mobile application with single code base. ",
+  "scripts": {
+    "ngxp-install": "npm install && cd web && npm install && cd ../nativescript && tns install && node ../tools/install.js && cd .. && typings install",
+    "build": "cd web && ng build",
+    "build.prod": "cd web && ng build --prod",
+    "build.aot": "cd web && ng build --aot",
+    "build.aot.prod": "cd web && ng build --aot --prod",
+    "start": "cd web && ng serve",
+    "start.prod": "cd web && ng serve --prod",
+    "start.aot": "cd web && ng serve --aot",
+    "start.aot.prod": "cd web && ng serve --aot --prod",
+    "start.android": "cd nativescript && tns run android",
+    "start.ios": "cd nativescript && tns run ios",
+    "livesync.android": "cd nativescript && tns livesync android --watch",
+    "livesync.ios": "cd nativescript && tns livesync ios --watch",
+    "test": "cd web && ng test",
+    "test-cc": "npm test -- -cc",
+    "test.android": "cd nativescript && tns test android --watch",
+    "test.ios": "cd nativescript && tns test ios --watch"
+  },
+  "keywords": [
+    "nativescript",
+    "angular2",
+    "ng2",
+    "angular"
+  ],
+  "author": "Shripal Soni",
+  "license": "MIT",
+  "devDependencies": {
+    "codelyzer": "0.0.28",
+    "@types/jasmine": "^2.2.30",
+    "typings": "^1.4.0",
+    "tslint": "^3.15.1"
+  },
+  "dependencies": {
+    "@angular/core": "~2.1.0",
+    "@angular/common": "~2.1.0",
+    "@angular/compiler": "~2.1.0",
+    "@angular/forms": "~2.1.0",
+    "@angular/http": "~2.1.0",
+    "@angular/platform-browser": "~2.1.0",
+    "@angular/platform-browser-dynamic": "~2.1.0",
+    "@angular/router": "~3.1.0",
+    "core-js": "^2.4.1",
+    "rxjs": "5.0.0-beta.12",
+    "zone.js": "^0.6.25",
+    "ts-helpers": "^1.1.1"
+  }
+}

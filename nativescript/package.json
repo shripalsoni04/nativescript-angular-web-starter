@@ -1,0 +1,41 @@
+{
+  "description": "NativeScript Application",
+  "license": "SEE LICENSE IN <your-license-filename>",
+  "readme": "NativeScript Application",
+  "repository": "<fill-your-repository-here>",
+  "nativescript": {
+    "id": "io.ngxp.ns-web-starter",
+    "tns-ios": {
+      "version": "2.3.0"
+    },
+    "tns-android": {
+      "version": "2.3.0"
+    }
+  },
+  "dependencies": {
+    "@angular/common": "2.1.2",
+    "@angular/compiler": "2.1.2",
+    "@angular/core": "2.1.2",
+    "@angular/forms": "2.1.2",
+    "@angular/http": "2.1.2",
+    "@angular/platform-browser": "2.1.2",
+    "@angular/platform-browser-dynamic": "2.1.2",
+    "@angular/router": "3.1.2",
+    "nativescript-angular": "1.1.2",
+    "nativescript-swiss-army-knife": "^1.0.71",
+    "nativescript-theme-core": "^0.2.1",
+    "reflect-metadata": "~0.1.8",
+    "rxjs": "5.0.0-beta.12",
+    "tns-core-modules": "2.3.0"
+  },
+  "devDependencies": {
+    "babel-traverse": "6.18.0",
+    "babel-types": "6.18.0",
+    "babylon": "6.13.1",
+    "lazy": "1.0.11",
+    "nativescript-dev-sass": "^0.4.1",
+    "nativescript-dev-typescript": "^0.3.2",
+    "typescript": "^2.0.9",
+    "zone.js": "~0.6.21"
+  }
+}
