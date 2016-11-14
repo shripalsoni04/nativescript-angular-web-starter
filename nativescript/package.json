@@ -4,13 +4,7 @@
   "readme": "NativeScript Application",
   "repository": "<fill-your-repository-here>",
   "nativescript": {
-    "id": "io.ngxp.ns-web-starter",
-    "tns-ios": {
-      "version": "2.3.0"
-    },
-    "tns-android": {
-      "version": "2.3.0"
-    }
+    "id": "io.ngxp.nswebstarter"
   },
   "dependencies": {
     "@angular/common": "2.1.2",
