@@ -1,5 +1,7 @@
 # Nativescript Angular Web Starter
-Starter to create native mobile and web apps with single shared code base using angular and nativescript.
+A simple starter project to create native mobile and web apps with single shared code base using angular and nativescript.
+
+[![YouTube demo](http://ngxp.io/wp-content/product-previews/nativescript-angular-web-starter/nativescript-angular-web-starter.png)](https://youtu.be/NJ1oOEIdXVk "YouTube demo")
 
 ## Prerequisites
 1. Globally installed Nativecript  - `npm install -g nativescript`
@@ -21,7 +23,7 @@ Starter to create native mobile and web apps with single shared code base using 
 `npm run start.android`
   
 ## Project Folder Structure
-**Nativescript**
+**nativescript**
 
 This contains a nativescript project for creating Android/iOS applications.
 
@@ -157,6 +159,8 @@ android {
 </dict>
 ```
 
-## Attributes (All are npm packages)
-1. nativescript-swiss-army-knife
-2. Awesome framework and toolchain of Nativescript and Angular.
+## Attributes
+1. Angular framework
+2. Nativescript framework
+3. nativescript-swiss-army-knife
+
