@@ -1,4 +1,4 @@
-# Nativescript Web Starter
+# Nativescript Angular Web Starter
 Starter to create native mobile and web apps with single shared code base using angular and nativescript.
 
 ## Prerequisites
@@ -7,8 +7,8 @@ Starter to create native mobile and web apps with single shared code base using 
 3. Mac OS to build iOS app.
 
 ## Installation
-1. `git clone https://github.com/shripalsoni04/nativescript-web-starter --depth=1`
-2. `cd nativescript-web-starter`
+1. `git clone https://github.com/shripalsoni04/nativescript-angular-web-starter --depth=1`
+2. `cd nativescript-angular-web-starter`
 3. `npm run ngxp-install` 
 
 ## Run Web application
@@ -20,6 +20,24 @@ Starter to create native mobile and web apps with single shared code base using 
 ## Run Android Application
 `npm run start.android`
   
+## Project Folder Structure
+**Nativescript**
+
+This contains a nativescript project for creating Android/iOS applications.
+
+**tools**
+
+This contains scripts useful during development.
+
+**web**
+
+This contains nothing but a web project created using `angular-cli`.
+
+**x-shared**
+
+All the code/assets which are common to both web and nativescript projects resides here. This folder is symlinked to `nativescript/app/x-shared` and `web/src/x-shared` folder. So changes in `x-shared` folder from any of the three locations will get reflected in other two folders.
+
+
 ## Commands
 You can execute any valid command of angular-cli from `web/` folder and any valid command of nativescript-cli from `nativescript/` folder.
 For convenince below are the commands which you can execute from root directory.
@@ -64,7 +82,7 @@ For convenince below are the commands which you can execute from root directory.
 
   - **Note**: When you execute `npm test` or `npm run test-cc` commands, make sure you uncomment above lines, otherwise test cases will give errors.
 
-2. For Android/iOS, Changes in `x-shared` folder are not being watched and deplyed to device/emulator when using livesync command in watch mode.
+2. For Android/iOS, changes in `x-shared` folder are not being watched and deplyed to device/emulator when using livesync command in watch mode.
   - Currently there is a bug in `nativescript-cli` that the changes in symlinked folder are not being watched. This can be tracked at https://github.com/NativeScript/nativescript-cli/issues/2221. So this may be fixed in next releases but if you want this functionality right now, there is a workaround solution as follows:
 
   - **Workaround Solution** - Go to the folder where `nativescript` is globally installed. For macOS it is at `/usr/local/lib/node_modules/nativescript/`. From that folder open `lib/services/livesync/livesync-service.js` file and add `follow:true` option in `gaze` function call in  `partialSync` method as follows:
@@ -93,6 +111,7 @@ For convenince below are the commands which you can execute from root directory.
 ## FAQ
 ### How to change package/bundle id for Android/iOS apps?
 To change the package/bundle id you need to do changes in below files.
+
 1. `nativescript/package.json`
 - Change `id` property of `nativescript` object as follows:
 
@@ -115,13 +134,13 @@ android {
 ```
 
 ### How to change Android and iOS Application Display Name?
-**For Android**, open `nativescript/app/App_Resources/Android/values/strings.xml` file and write your app name `Nativescript Web Starter` is written:
+**For Android**, open `nativescript/app/App_Resources/Android/values/strings.xml` file and write your app name where `Nativescript Angular Web Starter` is written:
 
 ```
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Nativescript Web Starter</string>
-    <string name="title_activity_kimera">Nativescript Web Starter</string>
+    <string name="app_name">Nativescript Angular Web Starter</string>
+    <string name="title_activity_kimera">Nativescript Angular Web Starter</string>
 </resources>
 ```
 
@@ -131,9 +150,9 @@ android {
 <dict>
   ...
   <key>CFBundleDisplayName</key>
-	<string>Nativescript Web Starter</string>
+	<string>Nativescript Angular Web Starter</string>
   <key>CFBundleName</key>
-	<string>NativescriptWebStarter</string>
+	<string>NativescriptAngularWebStarter</string>
   ...
 </dict>
 ```

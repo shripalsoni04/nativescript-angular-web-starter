@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Nativescript Web Starter</string>
-    <string name="title_activity_kimera">Nativescript Web Starter</string>
+    <string name="app_name">Nativescript Angular Web Starter</string>
+    <string name="title_activity_kimera">Nativescript Angular Web Starter</string>
 </resources>

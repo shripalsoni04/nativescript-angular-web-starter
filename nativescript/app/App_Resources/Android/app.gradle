@@ -8,7 +8,7 @@
 android {
   defaultConfig {
     generatedDensities = []
-    applicationId = "io.ngxp.nswebstarter"
+    applicationId = "io.ngxp.nsngwebstarter"
   }
   aaptOptions {
     additionalParameters "--no-version-vectors"

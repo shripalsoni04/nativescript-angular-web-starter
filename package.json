@@ -1,5 +1,5 @@
 {
-  "name": "nativescript-web-starter",
+  "name": "nativescript-angular-web-starter",
   "version": "1.0.0",
   "description": "Starter for web and native mobile application with single code base. ",
   "scripts": {
