@@ -30,10 +30,10 @@
   "author": "Shripal Soni",
   "license": "MIT",
   "devDependencies": {
-    "codelyzer": "0.0.28",
     "@types/jasmine": "^2.2.30",
-    "typings": "^1.4.0",
-    "tslint": "^3.15.1"
+    "codelyzer": "^1.0.0-beta.3",
+    "tslint": "^3.15.1",
+    "typings": "^1.4.0"
   },
   "dependencies": {
     "@angular/core": "~2.1.0",
