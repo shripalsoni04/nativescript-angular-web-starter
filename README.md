@@ -56,8 +56,8 @@ For convenince below are the commands which you can execute from root directory.
 |------------------------|------------------------------------------------------------------------------------------------------------------------------------|
 | npm start              | Starts web application at http://localhost:4200                                                                                    |
 | npm run start.prod     | Starts web application in production mode. Runs uglification and minification.                                                     |
-| npm run start.aot      | Performs AOT for web application templates and starts web application. (Before executing this command refer Point 1 of [Known Issues](https://github.com/shripalsoni04/nativescript-angular-web-starter#known-issues-and-solution))              |
-| npm run start.aot.prod | Performs AOT, minification, uglification and starts web application. (Before executing this command refer Point 1 of [Known Issues](https://github.com/shripalsoni04/nativescript-angular-web-starter#known-issues-and-solution))                |
+| npm run start.aot      | Performs AOT for web application templates and starts web application.                                                             |
+| npm run start.aot.prod | Performs AOT, minification, uglification and starts web application.                                                               |
 | npm run build          | Builds the web application and copy the built project in web/dist folder.                                                          |
 | npm run build.prod     | Builds the web application in production mode and copy the built project in web/dist folder.                                       |
 | npm run build.aot      | Performs AOT, build the project and then copy the built project in web/dist folder.                                                |
