@@ -2,10 +2,10 @@
 @import "scss/variables";
 
 // Core CSS
-@import "nativescript-theme-core/theme-core-scss/index";
+@import "nativescript-theme-core/scss/index";
 
 // Style adjustments for Android
-@import "nativescript-theme-core/theme-core-scss/themes/core/platforms/index.android";
+@import "nativescript-theme-core/scss/themes/core/platforms/index.android";
 
 // App styles common to Android and iOS platforms.
 @import "scss/app-common";
