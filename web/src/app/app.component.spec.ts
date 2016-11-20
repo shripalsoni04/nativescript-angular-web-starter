@@ -5,7 +5,7 @@ import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 
-import { RouterOutletStubComponent, RouterLinkStubDirective } from '../testing';
+import { RoutingStubsModule } from '../testing';
 
 describe('AppComponent', () => {
 
@@ -14,10 +14,11 @@ describe('AppComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
+      imports: [
+        RoutingStubsModule
+      ],
       declarations: [
-        AppComponent,
-        RouterOutletStubComponent,
-        RouterLinkStubDirective
+        AppComponent
       ],
     });
 

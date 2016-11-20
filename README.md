@@ -75,18 +75,7 @@ For convenince below are the commands which you can execute from root directory.
 | npm run livesync.android | Starts application in livesync mode on Android emulator/device.       
 
 ## Known Issues and Solution
-1. Regarding AOT
-  - When you prepare AOT build or serve project in AOT mode, make sure you comment the exclude configuration in web/src/tsconfig.json file. Because currently AOT build also trying to compile test files and failing .This is know issue and can be tracked at https://github.com/angular/angular-cli/issues/2736. Once it is resolved, we can keep this uncommented for better unit testing support.
-  ```
-  // "exclude": [
-  //   "**/*.spec.ts",
-  //   "testing/**/*.ts"
-  // ]
-  ```
-
-  - **Note**: When you execute `npm test` or `npm run test-cc` commands, make sure you uncomment above lines, otherwise test cases will give errors.
-
-2. For Android/iOS, changes in `x-shared` folder are not being watched and deplyed to device/emulator when using livesync command in watch mode.
+1. For Android/iOS, changes in `x-shared` folder are not being watched and deplyed to device/emulator when using livesync command in watch mode.
   - Currently there is a bug in `nativescript-cli` that the changes in symlinked folder are not being watched. This can be tracked at https://github.com/NativeScript/nativescript-cli/issues/2221. So this may be fixed in next releases but if you want this functionality right now, there is a workaround solution as follows:
 
   - **Workaround Solution** - Go to the folder where `nativescript` is globally installed. For macOS it is at `/usr/local/lib/node_modules/nativescript/`. From that folder open `lib/services/livesync/livesync-service.js` file and add `follow:true` option in `gaze` function call in  `partialSync` method as follows:
@@ -101,7 +90,7 @@ For convenince below are the commands which you can execute from root directory.
     };
   ```
 
-3. Angular dependencies at two levels for AOT support
+2. Angular dependencies at two levels for AOT support
   - Currently we have added angular dependencies in root level package.json and web/package.json. Because, AOT does not work properly when we use path mapping and this issue is reported and can be traked at https://github.com/angular/angular-cli/issues/1732 and PR:https://github.com/angular/angular-cli/pull/2470. Once this issue is resolved we can add path mapping as shown below and remove the angular dependencies from web/package.json, so in case of any version update we just need to change the version at root directory level.
 
     **web/src/tsconfig.json**

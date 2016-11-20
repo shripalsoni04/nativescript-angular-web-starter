@@ -14,10 +14,4 @@
       "../node_modules/@types"
     ]
   }
-  // TODO: Remove this exclude once angular-cli bug of aot includes test files is resolved. https://github.com/angular/angular-cli/issues/2736
-  // If you want to create aot build, uncomment exclude config.
-  // "exclude": [
-  //   "**/*.spec.ts",
-  //   "testing/**/*.ts"
-  // ]
 }
