@@ -151,7 +151,11 @@ android {
 ```
 
 ## Attributes
-1. Angular framework
-2. Nativescript framework
-3. nativescript-swiss-army-knife
+1. [Angular Framework](https://angular.io/)
+2. [Nativescript Framework](http://nativescript.org/)
+3. [Nativescript Core Theme](https://github.com/NativeScript/theme)
+4. [nativescript-swiss-army-knife](https://github.com/TheOriginalJosh/nativescript-swiss-army-knife)
+5. `tools/install.js` from [angular-advanced-seed](https://github.com/NathanWalker/angular-seed-advanced)
 
+## Awesome Contributors
+[Nathan Walker](https://github.com/NathanWalker)
