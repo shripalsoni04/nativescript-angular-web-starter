@@ -70,36 +70,7 @@ For convenince below are the commands which you can execute from root directory.
 | Command                  | Description                                                                                                                        |
 |--------------------------|------------------------------------------------------------------------------------------------------------------------------------|
 | npm run start.ios        | Runs application on iOS emulator/device                                                                                            |
-| npm run start.android    | Runs application on Android emulator/device                                                                                        |
-| npm run livesync.ios     | Starts application in livesync mode on iOS emulator/device.                                                                        |
-| npm run livesync.android | Starts application in livesync mode on Android emulator/device.       
-
-## Known Issues and Solution
-1. For Android/iOS, changes in `x-shared` folder are not being watched and deplyed to device/emulator when using livesync command in watch mode.
-  - Currently there is a bug in `nativescript-cli` that the changes in symlinked folder are not being watched. This can be tracked at https://github.com/NativeScript/nativescript-cli/issues/2221. So this may be fixed in next releases but if you want this functionality right now, there is a workaround solution as follows:
-
-  - **Workaround Solution** - Go to the folder where `nativescript` is globally installed. For macOS it is at `/usr/local/lib/node_modules/nativescript/`. From that folder open `lib/services/livesync/livesync-service.js` file and add `follow:true` option in `gaze` function call in  `partialSync` method as follows:
-
-  ```
-  LiveSyncService.prototype.partialSync = function (syncWorkingDirectory, onChangedActions) {
-        ...
-        var gazeWatcher = gaze("**/*", { cwd: syncWorkingDirectory, follow: true }, function (err, watcher) {
-            ...
-        });
-        ...
-    };
-  ```
-
-2. Angular dependencies at two levels for AOT support
-  - Currently we have added angular dependencies in root level package.json and web/package.json. Because, AOT does not work properly when we use path mapping and this issue is reported and can be traked at https://github.com/angular/angular-cli/issues/1732 and PR:https://github.com/angular/angular-cli/pull/2470. Once this issue is resolved we can add path mapping as shown below and remove the angular dependencies from web/package.json, so in case of any version update we just need to change the version at root directory level.
-
-    **web/src/tsconfig.json**
-    ```
-    "paths": {
-        "@angular/*": ["../../node_modules/@angular/*"]
-      }
-    ```
-
+| npm run start.android    | Runs application on Android emulator/device                                                                                        |      
 
 ## FAQ
 ### How to change package/bundle id for Android/iOS apps?
@@ -149,6 +120,16 @@ android {
   ...
 </dict>
 ```
+### How to use angular dependencies from common node_modules folder. (Not tested properly yet!)
+Currently you can see that for web project, angular modules are there as dependencies in common package.json and at web/package.json. So currently to update version of angular modules for web project,
+you need to update version at both of these package.json files. To avoid this, you can add path mapping in web project's tsconfig.json file as shown below:
+
+`web/src/tsconfig.json`
+"paths": {
+  "@angular/*": ["../../node_modules/@angular/*"]
+}
+
+Once you add above configuration, the web project will try to find the @angular pacakges from common node_modules folder.
 
 ## Attributes
 1. [Angular Framework](https://angular.io/)
