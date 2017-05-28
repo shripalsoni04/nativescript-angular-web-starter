@@ -142,3 +142,5 @@ Once you add above configuration, the web project will try to find the @angular 
 
 ## Awesome Contributors
 [Nathan Walker](https://github.com/NathanWalker)
+
+[Mathieu Brunot](https://github.com/madmath03)
