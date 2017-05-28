@@ -1,13 +1,13 @@
 // Theme variables cusomizations
-@import "scss/variables";
+@import "~/scss/variables";
 
 // Core CSS
-@import "nativescript-theme-core/scss/index";
+@import "~nativescript-theme-core/scss/index";
 
 // Style adjustments for iOS
-@import "nativescript-theme-core/scss/platforms/index.ios";
+@import "~nativescript-theme-core/scss/platforms/index.ios";
 
 // App styles common to Android and iOS platforms.
-@import "scss/app-common";
+@import "~/scss/app-common";
 
 // iOS specific app styles
