@@ -125,9 +125,11 @@ Currently you can see that for web project, angular modules are there as depende
 you need to update version at both of these package.json files. To avoid this, you can add path mapping in web project's tsconfig.json file as shown below:
 
 `web/src/tsconfig.json`
+```
 "paths": {
   "@angular/*": ["../../node_modules/@angular/*"]
 }
+```
 
 Once you add above configuration, the web project will try to find the @angular pacakges from common node_modules folder.
 
